@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PF ou CNPJ com Fator R? Calculadora para psicólogos, dentistas e terapeutas | Receita Saúde 2026</title>
+<meta name="description" content="Calculadora grátis: compare Carnê-Leão (PF) vs Simples Nacional com Fator R e descubra quanto você economizaria abrindo CNPJ. Feita para quem emite recibo pelo app Receita Saúde. Sem cadastro, resultado na hora.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://daniel-filius.github.io/receita-saude-fator-r/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PF ou CNPJ com Fator R? Calculadora para profissionais da saúde">
+<meta property="og:description" content="Faturamento + % de pró-labore → compara Carnê-Leão (PF) com Simples Nacional + Fator R e mostra a economia anual estimada. Grátis e na hora.">
+<meta property="og:url" content="https://daniel-filius.github.io/receita-saude-fator-r/">
+<meta property="og:locale" content="pt_BR">
+<!-- Analytics plausível (sem custo, sem cookies): descomentar e trocar o domínio no deploy.
+     Plausible Community Edition self-hosted no NAS, ou GoatCounter free tier. -->
+<!--
+<script defer data-domain="daniel-filius.github.io/receita-saude-fator-r" src="https://plausible.io/js/script.js"></script>
+-->
+<style>
+  :root{
+    --verde:#1a8a4a; --verde-bg:#e6f5ec;
+    --amarelo:#b8860b; --amarelo-bg:#fdf6e3;
+    --vermelho:#c0392b; --vermelho-bg:#fdeceb;
+    --azul:#1c4e80; --texto:#1f2933; --cinza:#52606d; --linha:#e4e7eb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--texto);line-height:1.55;background:#fafbfc}
+  header{background:linear-gradient(135deg,#1c4e80,#2c6cb0);color:#fff;padding:2.4rem 1rem 2rem;text-align:center}
+  header h1{margin:0 0 .5rem;font-size:1.6rem;max-width:720px;margin-inline:auto}
+  header p{margin:0;opacity:.92;max-width:620px;margin-inline:auto;font-size:1.02rem}
+  main{max-width:720px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  .card{background:#fff;border:1px solid var(--linha);border-radius:12px;padding:1.4rem;margin-bottom:1.4rem;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  h2{font-size:1.2rem;margin:0 0 1rem}
+  label{display:block;font-weight:600;margin:.9rem 0 .3rem;font-size:.95rem}
+  .hint{font-weight:400;color:var(--cinza);font-size:.82rem;display:block;margin-top:.15rem}
+  input[type=number],input[type=range],select{width:100%;padding:.65rem .7rem;border:1px solid #cbd2d9;border-radius:8px;font-size:1rem;background:#fff}
+  input:focus,select:focus{outline:2px solid #2c6cb0;border-color:#2c6cb0}
+  .row{display:flex;gap:1rem;flex-wrap:wrap}
+  .row>div{flex:1;min-width:160px}
+  button{cursor:pointer;border:none;border-radius:8px;font-weight:700;font-size:1rem;padding:.8rem 1rem;width:100%;margin-top:1.2rem;background:#1c4e80;color:#fff;transition:background .15s}
+  button:hover{background:#163d63}
+  #resultado{display:none;margin-top:1.4rem}
+  .semaforo{border-radius:12px;padding:1.1rem 1.2rem;margin-bottom:1rem;border:1px solid}
+  .semaforo h3{margin:0 0 .35rem;font-size:1.15rem}
+  .semaforo p{margin:0;font-size:.95rem}
+  .s-verde{background:var(--verde-bg);border-color:var(--verde);color:var(--verde)}
+  .s-amarelo{background:var(--amarelo-bg);border-color:var(--amarelo);color:var(--amarelo)}
+  .s-vermelho{background:var(--vermelho-bg);border-color:var(--vermelho);color:var(--vermelho)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}
+  .box{background:#f7f9fb;border:1px solid var(--linha);border-radius:10px;padding:.9rem}
+  .box .k{font-size:.78rem;color:var(--cinza);text-transform:uppercase;letter-spacing:.03em}
+  .box .v{font-size:1.25rem;font-weight:700;margin-top:.2rem}
+  table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.92rem}
+  th,td{text-align:left;padding:.55rem .4rem;border-bottom:1px solid var(--linha)}
+  th{color:var(--cinza);font-weight:600;font-size:.82rem;text-transform:uppercase}
+  .cta{display:block;text-align:center;background:#1a8a4a;color:#fff;text-decoration:none;font-weight:700;padding:.85rem 1rem;border-radius:8px;margin-top:1rem}
+  .cta:hover{background:#157a40}
+  .cta-sub{text-align:center;font-size:.82rem;color:var(--cinza);margin:.4rem 0 0}
+  .disclaimer{background:#fdf6e3;border:1px solid #e8d9a0;border-radius:10px;padding:.9rem 1rem;font-size:.85rem;color:#6b5d2e}
+  details{margin-top:.7rem}
+  summary{cursor:pointer;font-weight:600;color:var(--azul)}
+  details p,details li{font-size:.9rem;color:var(--cinza)}
+  ul.check{padding-left:1.1rem;margin:.6rem 0}
+  ul.check li{margin-bottom:.5rem;font-size:.93rem}
+  footer{text-align:center;font-size:.8rem;color:var(--cinza);padding:1.5rem 1rem 2.5rem;max-width:720px;margin:0 auto}
+  footer a{color:var(--azul)}
+  .ok-msg{display:none;background:var(--verde-bg);border:1px solid var(--verde);color:var(--verde);border-radius:8px;padding:.8rem 1rem;margin-bottom:1rem;font-weight:600}
+  .rangeval{font-weight:700;color:var(--azul)}
+</style>
+</head>
+<body>
+<header>
+  <h1>PF ou CNPJ? A obrigatoriedade do Receita Saúde escancarou sua renda. Descubra se compensa migrar.</h1>
+  <p>Calculadora grátis para psicólogos, dentistas, fisioterapeutas, fonoaudiólogos, terapeutas ocupacionais e médicos: compare o Carnê-Leão (PF) com o Simples Nacional + Fator R (CNPJ) e veja a economia estimada em reais.</p>
+</header>
+
+<main>
+  <p class="ok-msg" id="okmsg">Recebemos seu e-mail! Você vai receber conteúdo sobre Receita Saúde e Carnê-Leão de tempos em tempos.</p>
+
+  <section class="card">
+    <h2>1. Seus números como PF</h2>
+    <form id="calc" autocomplete="off">
+      <label for="profissao">Sua profissão
+        <span class="hint">Todas essas atividades entram como serviços (Anexo III ou V) no Simples Nacional — a regra de cálculo é a mesma.</span>
+      </label>
+      <select id="profissao">
+        <option value="psicologo">Psicólogo(a)</option>
+        <option value="dentista">Dentista</option>
+        <option value="fisioterapeuta">Fisioterapeuta</option>
+        <option value="fonoaudiologo">Fonoaudiólogo(a)</option>
+        <option value="terapeuta-ocupacional">Terapeuta ocupacional</option>
+        <option value="medico">Médico(a)</option>
+        <option value="outro">Outro profissional da saúde</option>
+      </select>
+
+      <label for="faturamento">Faturamento médio mensal como PF (R$)
+        <span class="hint">Total que você recebe por mês atendendo como pessoa física (o que hoje cai no recibo do Receita Saúde).</span>
+      </label>
+      <input type="number" id="faturamento" min="0" step="100" placeholder="ex.: 8000" inputmode="decimal">
+
+      <label for="prolabore">Se abrisse CNPJ, que % do faturamento tiraria de pró-labore? <span class="rangeval" id="prolabore-val">28%</span>
+        <span class="hint">Define o Fator R: <strong>28% ou mais</strong> cai no Anexo III (alíquota menor). Abaixo disso, Anexo V (alíquota maior).</span>
+      </label>
+      <input type="range" id="prolabore" min="10" max="100" step="1" value="28">
+
+      <label for="contabilidade">Custo mensal estimado de uma contabilidade PJ (R$)
+        <span class="hint">Abrir CNPJ tem custo de contabilidade obrigatória. Deixe a estimativa conservadora da sua região ou use o padrão sugerido.</span>
+      </label>
+      <input type="number" id="contabilidade" min="0" step="10" value="200" inputmode="decimal">
+
+      <button type="submit">Calcular minha economia</button>
+    </form>
+
+    <div id="resultado" aria-live="polite"></div>
+  </section>
+
+  <section class="card" id="checklist">
+    <h2>2. Receita Saúde: o que você precisa saber</h2>
+    <ul class="check">
+      <li><strong>Obrigatório desde 01/01/2025:</strong> psicólogos, dentistas, fisioterapeutas, fonoaudiólogos, terapeutas ocupacionais e médicos (PF) devem emitir recibo eletrônico pelo app Receita Saúde para cada atendimento.</li>
+      <li><strong>Cai direto na pré-preenchida:</strong> os recibos emitidos alimentam automaticamente a declaração de IRPF do ano seguinte — sua renda como PF fica 100% visível para a Receita Federal.</li>
+      <li><strong>Emissão retroativa tem prazo:</strong> recibos de anos-calendário anteriores só podem ser lançados dentro de uma janela definida pela Receita Federal — fique de olho nos prazos anunciados a cada ano.</li>
+      <li><strong>Não é sobre "sonegar":</strong> é sobre estrutura tributária. Quem sempre recebeu por PIX ou dinheiro sem declarar tinha um problema antes do Receita Saúde. Quem já declarava certo agora só tem mais clareza para decidir PF ou CNPJ.</li>
+    </ul>
+  </section>
+
+  <section class="card" id="alerta">
+    <h2>3. Quer o resultado por e-mail (e novidades sobre o tema)?</h2>
+    <p style="margin-top:0;color:var(--cinza);font-size:.95rem">Deixe seu e-mail e mandamos um resumo do seu cenário, além de avisos sobre mudanças no Receita Saúde e nas tabelas de IRPF/Simples. Sem spam.</p>
+    <form id="wl" action="https://formsubmit.co/danielfilho.workspace@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Novo lead — Receita Saúde / Fator R">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://daniel-filius.github.io/receita-saude-fator-r/?ok=1#alerta">
+      <input type="text" name="_honey" style="display:none">
+      <label for="wl-email" style="margin-top:0">Seu melhor e-mail</label>
+      <input type="email" id="wl-email" name="email" required placeholder="seu@email.com">
+      <button type="submit">Quero receber</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>4. Como o cálculo funciona</h2>
+    <div class="disclaimer">
+      <strong>Importante — isto não é aconselhamento contábil.</strong> Esta é uma ferramenta educativa de estimativa. Os valores usam as tabelas gerais do IRPF 2026 e do Simples Nacional (Anexo III/V) vigentes, mas não substituem uma análise contábil do seu caso — que pode ter deduções (Livro Caixa), INSS como contribuinte individual, particularidades por anexo/atividade e outros fatores não incluídos aqui. Antes de qualquer decisão, fale com um contador.
+    </div>
+    <details>
+      <summary>Regras usadas (2026)</summary>
+      <ul>
+        <li><strong>Carnê-Leão (PF):</strong> tabela progressiva mensal do IRPF, com o redutor da Lei 15.270/2025 — isenção total até R$ 5.000/mês de rendimento tributável, redução decrescente entre R$ 5.000,01 e R$ 7.350, e tabela cheia (até 27,5%) acima disso.</li>
+        <li><strong>Simples Nacional + Fator R:</strong> se o % de pró-labore informado for ≥ 28% do faturamento, o cálculo usa o <strong>Anexo III</strong> (alíquotas de 6% a 33%); abaixo de 28%, usa o <strong>Anexo V</strong> (alíquotas de 15,5% a 30,5%). A alíquota efetiva é (RBT12 × alíquota nominal − parcela a deduzir) / RBT12, aplicada sobre o faturamento anual projetado (faturamento mensal × 12).</li>
+        <li><strong>Não incluído nesta estimativa:</strong> INSS do contribuinte individual (PF) e eventual INSS patronal adicional fora do DAS no Anexo V — por isso a economia mostrada é uma aproximação, não o número final da sua declaração.</li>
+        <li><strong>Custo de contabilidade PJ:</strong> você informa a estimativa; ela é somada ao imposto do Simples para chegar no "custo total PJ" comparado ao Carnê-Leão.</li>
+      </ul>
+      <p>Fontes: tabela progressiva do IRPF 2026 (Lei 15.270/2025) e tabelas do Simples Nacional Anexo III/V (LC 123/2006 e alterações).</p>
+    </details>
+  </section>
+
+  <footer>
+    Decisor Receita Saúde + Fator R · ferramenta educativa gratuita · não é aconselhamento contábil.<br>
+    Os links de contabilidade podem ser de parceiros (afiliados). Isso não muda o preço para você.
+  </footer>
+</main>
+
+<script src="calc.js"></script>
+<script>
+const BRL = v => v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+const BRL2 = v => v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',minimumFractionDigits:2,maximumFractionDigits:2});
+
+// CTA de afiliado: trocar pelo link real do programa de indicação de contabilidade no deploy.
+const AFILIADO_URL = "AFFILIATE_URL";
+const TEM_AFILIADO = /^https?:\/\//.test(AFILIADO_URL); // só renderiza CTA externo quando há link real
+
+const prolaboreInput = document.getElementById('prolabore');
+const prolaboreVal = document.getElementById('prolabore-val');
+prolaboreInput.addEventListener('input', () => { prolaboreVal.textContent = prolaboreInput.value + '%'; });
+
+document.getElementById('calc').addEventListener('submit', function(e){
+  e.preventDefault();
+  const faturamento = parseFloat(document.getElementById('faturamento').value) || 0;
+  const fatorR = parseFloat(prolaboreInput.value) || 28;
+  const contabilidade = parseFloat(document.getElementById('contabilidade').value) || 0;
+
+  const r = RSFR.comparar(faturamento, fatorR, contabilidade);
+
+  let cls, titulo, msg;
+  if (r.semaforo === 'verde'){
+    cls='s-verde'; titulo='🟢 Vale a pena migrar para CNPJ';
+    msg = `Nessa estimativa, abrir CNPJ com Fator R economizaria ${BRL(r.economiaAnual)}/ano em relação a continuar como PF.`;
+  } else if (r.semaforo === 'amarelo'){
+    cls='s-amarelo'; titulo='🟡 No limite — vale conversar com um contador';
+    msg = `A economia estimada é pequena (${BRL(r.economiaAnual)}/ano). Pode valer a pena dependendo de detalhes que este cálculo não cobre.`;
+  } else {
+    cls='s-vermelho'; titulo='🔴 Não compensa migrar, por esses números';
+    msg = r.economiaAnual <= 0
+      ? `Nessa estimativa, continuar como PF sai ${BRL(Math.abs(r.economiaAnual))}/ano mais barato que abrir CNPJ nesse cenário.`
+      : `A diferença estimada é pequena e não compensa o custo/burocracia de abrir CNPJ.`;
+  }
+
+  const anexoNome = r.simplesAnexo === 'III' ? 'Anexo III' : 'Anexo V';
+  const aliqPct = (r.simplesAliquotaEfetiva*100).toLocaleString('pt-BR',{maximumFractionDigits:2});
+
+  let html = `
+    <div class="semaforo ${cls}">
+      <h3>${titulo}</h3>
+      <p>${msg}</p>
+    </div>
+
+    <div class="grid2">
+      <div class="box"><div class="k">Carnê-Leão estimado (PF/ano)</div><div class="v">${BRL(r.carneLeaoAnual)}</div></div>
+      <div class="box"><div class="k">Custo total PJ estimado (ano)</div><div class="v">${BRL(r.custoTotalPJ)}</div></div>
+    </div>
+
+    <h3 style="margin:1.3rem 0 .4rem;font-size:1.05rem">Como chegamos nesse número</h3>
+    <table>
+      <tr><th>Item</th><th>Valor</th></tr>
+      <tr><td>Faturamento anual projetado</td><td>${BRL(r.faturamentoAnual)}</td></tr>
+      <tr><td>Fator R informado</td><td>${fatorR}% → cai no <strong>${anexoNome}</strong></td></tr>
+      <tr><td>Alíquota efetiva do Simples</td><td>${aliqPct}%</td></tr>
+      <tr><td>Imposto do Simples (ano)</td><td>${BRL2(r.simplesImpostoAnual)}</td></tr>
+      <tr><td>Contabilidade PJ (ano)</td><td>${BRL2(r.custoContabilidadeAnual)}</td></tr>
+      <tr><td><strong>Economia anual estimada</strong></td><td><strong>${BRL2(r.economiaAnual)}</strong></td></tr>
+    </table>`;
+
+  if (TEM_AFILIADO) {
+    html += `
+    <a class="cta" href="${AFILIADO_URL}" target="_blank" rel="nofollow sponsored noopener" id="cta-afiliado">Falar com uma contabilidade especializada em saúde →</a>
+    <p class="cta-sub">Parceiros que cuidam da abertura de CNPJ e do Fator R por você. Link de indicação.</p>`;
+  } else {
+    html += `
+    <a class="cta" href="#alerta" id="cta-afiliado">Quero ajuda de uma contabilidade especializada em saúde →</a>
+    <p class="cta-sub">Deixe seu e-mail acima e te conectamos a uma contabilidade parceira.</p>`;
+  }
+
+  const box = document.getElementById('resultado');
+  box.innerHTML = html;
+  box.style.display = 'block';
+  box.scrollIntoView({behavior:'smooth', block:'nearest'});
+
+  if (window.plausible) window.plausible('calcular', {props:{semaforo:r.semaforo, anexo:r.simplesAnexo}});
+  const cta = document.getElementById('cta-afiliado');
+  if (cta) cta.addEventListener('click', ()=>{ if(window.plausible) window.plausible('clique-afiliado'); });
+});
+
+// Confirmação pós-submit da captura de e-mail: FormSubmit redireciona de volta com ?ok=1
+if (new URLSearchParams(location.search).get('ok') === '1'){
+  document.getElementById('okmsg').style.display = 'block';
+}
+</script>
+</body>
+</html>
