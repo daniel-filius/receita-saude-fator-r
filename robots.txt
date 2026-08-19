@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://daniel-filius.github.io/receita-saude-fator-r/sitemap.xml
